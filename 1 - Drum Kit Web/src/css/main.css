@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+:root {
+  --clr-light: #fff;
+  --clr-border: #5c1d6b;
+  --clr-border-highlight: #b41eb2;
+  --clr-desc: #fdd602;
+  --fs-desc: 1rem;
+  --fs-key: 2.5rem;
+  --size-key: 100px;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/abigail-lynn-rdmJc2Os4EM-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: var(--clr-light);
+  font-size: var(--fs-desc);
+  font-family: "Press Start 2P", cursive;
+}
+
+.app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app .keys .key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: var(--size-key);
+  height: var(--size-key);
+  border: 3px solid var(--clr-border);
+  border-radius: 15px;
+  margin-top: 10px;
+  transition: all 0.07s;
+}
+
+.app .keys .key kbd {
+  display: inline-block;
+  font-size: var(--fs-key);
+  background: transparent;
+  font-family: "Press Start 2P", cursive;
+}
+
+.app .keys .key .desc {
+  color: var(--clr-desc);
+  text-transform: uppercase;
+}
+
+.app .keys .key.playing {
+  transform: scale(1.1);
+  border-color: var(--clr-border-highlight);
+  box-shadow: 0 0 0.2rem var(--clr-light), 0 0 0.2rem var(--clr-light),
+    0 0 2rem var(--clr-border-highlight), 0 0 0.8rem var(--clr-border-highlight),
+    0 0 2.8rem var(--clr-border-highlight),
+    inset 0 0 1.3rem var(--clr-border-highlight);
+}
+
+.app .keys .key.playing kbd {
+  text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 15px #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .app .keys .key {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --fs-desc: 1.6rem;
+    --fs-key: 3.5rem;
+    --size-key: 180px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  :root {
+    --fs-desc: 1rem;
+    --fs-key: 2.5rem;
+    --size-key: 100px;
+  }
+}

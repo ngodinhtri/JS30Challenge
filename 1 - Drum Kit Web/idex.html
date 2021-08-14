@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="./src/css/main.css" />
+  </head>
+
+  <body>
+    <!-- app -->
+    <div class="app">
+      <div class="container">
+        <h3 class="title text-center">Press keys to play</h3>
+        <div class="keys row mt-5">
+          <div class="col-4 col-xl d-flex justify-content-center">
+            <div class="key" data-key="65">
+              <kbd>A</kbd>
+              <span class="desc">clap</span>
+            </div>
+          </div>
+          <div class="col-4 col-xl d-flex justify-content-center">
+            <div class="key" data-key="83">
+              <kbd>S</kbd>
+              <span class="desc">hithat</span>
+            </div>
+          </div>
+          <div class="col-4 col-xl d-flex justify-content-center">
+            <div class="key" data-key="68">
+              <kbd>D</kbd>
+              <span class="desc">kick</span>
+            </div>
+          </div>
+          <div class="col-4 col-xl d-flex justify-content-center">
+            <div class="key" data-key="70">
+              <kbd>F</kbd>
+              <span class="desc">openhat</span>
+            </div>
+          </div>
+          <div class="col-4 col-xl d-flex justify-content-center">
+            <div class="key" data-key="71">
+              <kbd>G</kbd>
+              <span class="desc">boom</span>
+            </div>
+          </div>
+          <div class="col-4 col-xl d-flex justify-content-center">
+            <div class="key" data-key="72">
+              <kbd>H</kbd>
+              <span class="desc">ride</span>
+            </div>
+          </div>
+          <div class="col-4 col-xl d-flex justify-content-center">
+            <div class="key" data-key="74">
+              <kbd>J</kbd>
+              <span class="desc">snare</span>
+            </div>
+          </div>
+          <div class="col-4 col-xl d-flex justify-content-center">
+            <div class="key" data-key="75">
+              <kbd>K</kbd>
+              <span class="desc">tom</span>
+            </div>
+          </div>
+          <div class="col-4 col-xl d-flex justify-content-center">
+            <div class="key" data-key="76">
+              <kbd>L</kbd>
+              <span class="desc">tink</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- audio -->
+    <audio data-key="65" src="./src/sounds/clap.wav"></audio>
+    <audio data-key="83" src="./src/sounds/hihat.wav"></audio>
+    <audio data-key="68" src="./src/sounds/kick.wav"></audio>
+    <audio data-key="70" src="./src/sounds/openhat.wav"></audio>
+    <audio data-key="71" src="./src/sounds/boom.wav"></audio>
+    <audio data-key="72" src="./src/sounds/ride.wav"></audio>
+    <audio data-key="74" src="./src/sounds/snare.wav"></audio>
+    <audio data-key="75" src="./src/sounds/tom.wav"></audio>
+    <audio data-key="76" src="./src/sounds/tink.wav"></audio>
+
+    <!-- Scripts -->
+    <script src="./src/scripts/main.js"></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
