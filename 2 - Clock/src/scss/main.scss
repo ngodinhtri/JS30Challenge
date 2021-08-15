@@ -1,0 +1,115 @@
+@import "mixins", "_toggle_switch_button";
+
+:root {
+  --clr-dark: #1b1e23;
+  --clr-white: #f4eed7;
+  --clr-gray: #b1b8bb;
+  --clr-accent: #ff007f;
+  --clr-bcg: var(--clr-white);
+
+  --size: 300px;
+}
+[data-theme="dark"] {
+  --clr-dark: #f4eed7;
+  --clr-white: #1b1e23;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  background: var(--clr-bcg);
+  height: 100%;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toggle-switch {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+}
+
+.clock {
+  position: relative;
+  @include setWH(var(--size));
+
+  &__hour,
+  &__minute,
+  &__second,
+  &__face,
+  &__axis {
+    position: absolute;
+  }
+
+  &__hour,
+  &__minute,
+  &__second {
+    @include trbl(50%, null, null, 50%);
+    transform: translateY(-50%) rotateZ(-90deg);
+    transform-origin: 0;
+    border-radius: 15px;
+    transition: transform 0.5s linear;
+  }
+
+  &__hour {
+    @include setWH(35%, 6px);
+    background-color: var(--clr-dark);
+  }
+
+  &__minute {
+    @include setWH(40%, 3px);
+    background-color: var(--clr-gray);
+  }
+
+  &__second {
+    @include setWH(45%, 2px);
+    background-color: var(--clr-accent);
+  }
+
+  &__axis {
+    @include setWH(10px);
+    @include trbl(50%, null, null, 50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: var(--clr-dark);
+  }
+
+  &__face {
+    @include trbl(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @for $i from 1 through 30 {
+      & .clock__indicator:nth-child(#{$i}) {
+        transform: rotateZ(calc(6deg * #{$i}));
+      }
+    }
+
+    & .clock__indicator {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 2px;
+      border-left: 3px solid var(--clr-dark);
+      border-right: 3px solid var(--clr-dark);
+      background: none;
+      box-sizing: border-box;
+
+      &:nth-child(5n) {
+        border-width: 10px;
+      }
+    }
+  }
+}

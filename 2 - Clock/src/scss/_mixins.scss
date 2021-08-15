@@ -1,0 +1,81 @@
+//variables
+$res_mi320: "only screen and (min-width: 320px)";
+$res_mi740: "only screen and (min-width: 740px)"; // >= Tablet
+$res_mi768: "only screen and (min-width: 768px)"; // >= Tablet
+$res_mi1024: "only screen and (min-width: 1024px)";
+$res_mi113: "only screen and (min-width: 1113px)"; // PC medium resolution >
+$res_mi740_ma1023: "only screen and (min-width: 740px) and (max-width: 1023px)"; // Tablet - PC low resolution
+$res_mi1024_ma1239: "only screen and (min-width: 1024px) and (max-width: 1239px)"; // > PC low resolution
+
+// responsive
+@mixin responsive_mi320 {
+  @media #{$res_mi320} {
+    @content;
+  }
+}
+
+@mixin responsive_mi740 {
+  @media #{$res_mi740} {
+    @content;
+  }
+}
+
+@mixin responsive_mi768 {
+  @media #{$res_mi768} {
+    @content;
+  }
+}
+
+@mixin responsive_mi1024 {
+  @media #{$res_mi1024} {
+    @content;
+  }
+}
+
+@mixin responsive_mi113 {
+  @media #{$res_mi113} {
+    @content;
+  }
+}
+
+@mixin responsive_mi740_ma1023 {
+  @media #{$res_mi740_ma1023} {
+    @content;
+  }
+}
+
+@mixin responsive_mi1024_ma1239 {
+  @media #{$res_mi1024_ma1239} {
+    @content;
+  }
+}
+
+//prefix
+@mixin prefix($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  #{$property}: $value;
+}
+
+//Set top, right, bottom, left properties
+@mixin trbl($t: null, $r: null, $b: null, $l: null) {
+  @if $t != null {
+    top: $t;
+  }
+  @if $r != null {
+    right: $r;
+  }
+  @if $b != null {
+    bottom: $b;
+  }
+  @if $l != null {
+    left: $l;
+  }
+}
+
+//Set width, height
+@mixin setWH($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
