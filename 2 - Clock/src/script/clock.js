@@ -11,38 +11,30 @@ function start() {
   let minute = now.getMinutes();
   let hour = now.getHours();
   // 0 => -90ᴼ | 15 => 0ᴼ | 30 => 90ᴼ | 45 => 180ᴼ
-  let secondDeg = second == 0 ? -90 : -90 + 6 * second;
-  let minuteDeg = minute == 0 ? -90 : -90 + 6 * minute;
-  let hourDeg = hour == 0 ? -90 : -90 + 6 * hour;
+  let secondDeg = second == 0 ? -90 : -90 + (second / 60) * 360;
+  let minuteDeg =
+    minute == 0 ? -90 : -90 + (minute / 60) * 360 + (second / 60) * 6;
+  //12h => 360ᴼ
+  let hourDeg = hour == 0 ? -90 : -90 + (hour / 12) * 360 + (minute / 60) * 30;
+  console.log(hourDeg);
 
-  secondElement.style.transform = `rotateZ(${secondDeg}deg) translateY(-50%)`;
-  minuteElement.style.transform = `rotateZ(${minuteDeg}deg) translateY(-50%)`;
-  hourElement.style.transform = `rotateZ(${hourDeg}deg) translateY(-50%)`;
+  secondElement.style.transform = `translateY(-50%) rotateZ(${secondDeg}deg)`;
+  minuteElement.style.transform = `translateY(-50%) rotateZ(${minuteDeg}deg)`;
+  hourElement.style.transform = `translateY(-50%) rotateZ(${hourDeg}deg)`;
 
   //--update
-  let minuteFlag = false;
-  let hourFlag = false;
-
   setInterval(() => {
     now = new Date();
     second = now.getSeconds();
     minute = now.getMinutes();
 
     secondDeg += 6;
-    secondElement.style.transform = `rotateZ(${secondDeg}deg) translateY(-50%)`;
+    secondElement.style.transform = `translateY(-50%) rotateZ(${secondDeg}deg)`;
 
-    if (second == 59) minuteFlag = true;
-    if (minuteFlag && second == 0) {
-      minuteDeg += 6;
-      minuteElement.style.transform = `rotateZ(${minuteDeg}deg) translateY(-50%)`;
-      minuteFlag = false;
-    }
+    minuteDeg += (1 / 60) * 6;
+    minuteElement.style.transform = `translateY(-50%) rotateZ(${minuteDeg}deg)`;
 
-    if (minute == 59) hourFlag = true;
-    if (hourFlag && minute == 0) {
-      hourDeg += 6;
-      hourElement.style.transform = `rotateZ(${hourDeg}deg) translateY(-50%)`;
-      hourFlag = false;
-    }
+    hourDeg += (1 / 3600) * 30;
+    hourElement.style.transform = `translateY(-50%) rotateZ(${hourDeg}deg)`;
   }, 1000);
 }
