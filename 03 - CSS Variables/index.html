@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS variables</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+      :root {
+        --color: #72858c;
+        --spacing: 10px;
+        --blur: 1px;
+      }
+      * {
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        font-size: 62.5%;
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: "Lobster", cursive;
+        font-size: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        background: #30414b;
+        color: #b1a189;
+      }
+
+      .title {
+        font-size: 4rem;
+        line-height: 4rem;
+      }
+
+      .title span {
+        color: var(--color);
+      }
+
+      .controls img {
+        display: block;
+        margin: 20px auto;
+
+        padding: var(--spacing);
+        background-color: var(--color);
+        filter: blur(var(--blur));
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="title">Update CSS Variables with <span>JS</span></h2>
+    <section class="controls">
+      <label for="spacing">Spacing:</label>
+      <input
+        type="range"
+        name="spacing"
+        min="10"
+        max="200"
+        value="10"
+        data-sizing="px"
+      />
+
+      <label for="blur">Blur:</label>
+      <input
+        type="range"
+        name="blur"
+        min="0"
+        max="25"
+        value="1"
+        data-sizing="px"
+      />
+
+      <label for="color">Color:</label>
+      <input type="color" name="color" value="#72858C" />
+
+      <img
+        src="https://images.unsplash.com/photo-1628973080310-9fedbef71a49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+      />
+    </section>
+    <script src="./index.js"></script>
+  </body>
+</html>
