@@ -10,3 +10,5 @@
 4. [Array method - 1](https://ngodinhtri.github.io/JS30Challenge/4%20-%20Array%20Cardio%20Day%201/index.html)
 5. [Flex Panel Gallery](https://ngodinhtri.github.io/JS30Challenge/5%20-%20Flex%20Panel%20Gallery/index.html)
 6. [Ajax Type Ahead](https://ngodinhtri.github.io/JS30Challenge/6%20-%20Type%20Ahead/index.html)
+7. [Array method - 2](https://ngodinhtri.github.io/JS30Challenge/7%20-%20Array%20Cardio%20Day%202/index.html)
+8. [Draw with HTML Canvas](https://ngodinhtri.github.io/JS30Challenge/8%20-%20Fun%20with%20HTML5%20Canvas/index.html)
